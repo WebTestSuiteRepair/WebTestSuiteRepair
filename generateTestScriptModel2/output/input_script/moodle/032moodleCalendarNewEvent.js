@@ -1,0 +1,10 @@
+var Nightmare = require("nightmare");
+var lib = require("test_scenario");
+var scenario = new lib.Scenario();
+scenario.addAction(new lib.GotoAction("http://localhost:8888/moodle_3_4_5/login/index.php"));
+scenario.addAction(new lib.TypeAction("#username", "admin"));
+scenario.addAction(new lib.TypeAction("#password", "TestMoodle$100"));
+scenario.addAction(new lib.ClickAction("#loginbtn"));
+scenario.addAction(new lib.ClickAction("#nav-drawer > NAV:nth-child(1) > A:nth-child(3) > DIV:nth-child(1)"));
+scenario.addAction(new lib.ClickAction("#region-main > DIV:nth-child(1) > DIV:nth-child(2) > DIV:nth-child(2) > DIV:nth-child(1) > DIV:nth-child(2) > DIV:nth-child(1) > DIV:nth-child(1) > BUTTON:nth-child(3)"));
+process.send(scenario);
