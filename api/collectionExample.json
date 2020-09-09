@@ -1,0 +1,83 @@
+_id is automatically created by mongodb (ObjectID)
+
+url
+{
+	"_id": "5bd714f02f655254f537640d",
+	"urlContent": "https://www.amazon.fr/"
+}
+
+action
+{
+	"_id": "5bd70e502f65524d9637640c",	
+	"actionContents": {
+		"url": "https://www.amazon.fr/",
+		"type" : "ClickAction",
+		"selector" : "#menu > UL:nth-child(7) > LI:nth-child(1) > A:nth-child(1)"
+	}
+}
+
+link
+{
+	"_id": "9bd70e502h83524d9637640e",
+	"former_action": {
+			"action_id" : "5bd70e502f65524d9637640c",
+			"type" : "ClickAction",
+			"selector" : "#menu > UL:nth-child(7) > LI:nth-child(1) > A:nth-child(1)"
+		},
+	"latter_action": {
+			"action_id" : "5bd70e502f65524d9637640c",
+			"type" : "ClickAction",
+			"selector" : "#menu > UL:nth-child(7) > LI:nth-child(1) > A:nth-child(1)"
+		},
+}
+
+scenario
+{
+	"_id": "4kf714f02f676254f537669r",
+	"run_status": "false/true/null",
+	"actions" : [ 
+		{
+			"action_id" : "5bd70e502f65524d9637640c",
+			"type" : "GotoAction",
+			"url" : "https://www.amazon.fr/",
+			"header" : {
+				"User-Agent" : "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1"
+			}
+		},
+
+		{
+			"action_id" : "5bd70e502f65524d9637640c",
+			"type" : "WaitAction",
+			"ms" : 1000
+		},
+
+		{
+			"action_id" : "5bd70e502f65524d9637640c",
+			"type" : "ClickAction",
+			"selector" : "#menu > UL:nth-child(7) > LI:nth-child(1) > A:nth-child(1)"
+		}, 
+
+		{
+			"action_id" : "5bd70e502f65524d9637640c",
+			"type" : "TypeAction",
+			"selector" : "#menu > UL:nth-child(7) > LI:nth-child(3) > A:nth-child(1)",
+			"text" : "input what you want"
+		},
+
+		{
+			"action_id" : "5bd70e502f65524d9637640c",
+			"type" : "SelectAction",
+			"selector" : "#menu > UL:nth-child(7) > LI:nth-child(5) > A:nth-child(1)",
+			"option" : "search-alias=arts-crafts-intl-ship"
+		}
+	],
+	"detectedErrors" : [
+		{
+			"selector": "",
+			"actualValue": "",
+			"expectedValue": "",
+			"step": 1
+		}
+	]
+}
+
