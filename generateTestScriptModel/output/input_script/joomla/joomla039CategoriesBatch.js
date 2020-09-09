@@ -1,0 +1,18 @@
+var Nightmare = require("nightmare");
+var lib = require("test_scenario");
+var scenario = new lib.Scenario();
+scenario.addAction(new lib.GotoAction("http://localhost:8888/Joomla_3_6_0/administrator/"));
+scenario.addAction(new lib.TypeAction("#mod-login-username", "admin"));
+scenario.addAction(new lib.TypeAction("#mod-login-password", "123456"));
+scenario.addAction(new lib.ClickAction("#form-login > FIELDSET:nth-child(1) > DIV:nth-child(3) > DIV:nth-child(1) > DIV:nth-child(1) > BUTTON:nth-child(1)"));
+scenario.addAction(new lib.ClickAction("#content > DIV:nth-child(1) > DIV:nth-child(1) > DIV:nth-child(2) > DIV:nth-child(1) > DIV:nth-child(1) > DIV:nth-child(1) > DIV:nth-child(1) > UL:nth-child(2) > LI:nth-child(3) > A:nth-child(1) > SPAN:nth-child(2)"));
+scenario.addAction(new lib.ClickAction("#toolbar-new > BUTTON:nth-child(1)"));
+scenario.addAction(new lib.TypeAction("#jform_title", "New Category Title"));
+scenario.addAction(new lib.ClickAction("#toolbar-save > BUTTON:nth-child(1)"));
+scenario.addAction(new lib.ClickAction("#content > DIV:nth-child(1) > DIV:nth-child(1) > DIV:nth-child(2) > DIV:nth-child(1) > DIV:nth-child(1) > DIV:nth-child(1) > DIV:nth-child(1) > UL:nth-child(2) > LI:nth-child(3) > A:nth-child(1) > SPAN:nth-child(2)"));
+scenario.addAction(new lib.ClickAction("#cb1"));
+scenario.addAction(new lib.ClickAction("#toolbar-batch > BUTTON:nth-child(1)"));
+scenario.addAction(new lib.ClickAction("#batch_language_id_chzn > A:nth-child(1) > SPAN:nth-child(1)"));
+scenario.addAction(new lib.ClickAction("#batch_language_id_chzn > DIV:nth-child(2) > UL:nth-child(2) > LI:nth-child(3)"));
+scenario.addAction(new lib.ClickAction("#collapseModal > DIV:nth-child(3) > BUTTON:nth-child(2)"));
+process.send(scenario);
